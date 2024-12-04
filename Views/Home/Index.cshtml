@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Hero Section -->
+<section class="hero text-white d-flex mt-lg-1">
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+           
+            <div class="col-lg-6 text-center text-lg-start p-5">
+                <h1 class="display-4 fw-bold mb-4 text-center">
+                    Track Your <span class="text-accent">Expenses Smarter</span>
+                </h1>
+                <p class="lead mb-4">
+                    Manage your budget effectively, stay on top of your spending, and make smarter financial decisions.
+                </p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                    <a asp-controller="Home" asp-action="Expenses" class="btn btn-primary btn-lg px-4 rounded-pill">
+                        View Overview
+                    </a>
+                    <a asp-controller="Home" asp-action="CreateEditExpense" class="btn btn-outline-light btn-lg px-4 rounded-pill">
+                        Add New Expense
+                    </a>
+                </div>
+            </div>
+            <!-- Image Section -->
+            <div class="col-lg-6">
+                <img src="~/hero-image.jpg" alt="Budget Planning" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Features Section -->
+<section class="features py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">What We Offer</h2>
+        <div class="row g-4">
+            @foreach (var feature in new[] {
+            ("fa-chart-line", "Track Your Spending", "Gain insights into your financial habits, analyze your expenses, and make informed decisions to save more."),
+            ("fa-cogs", "Customizable Tools", "Tailor your budgeting experience with tools that help you align with your personal financial goals."),
+            ("fa-lock", "Secure & Private", "Your data is secured using advanced encryption, ensuring that your information remains confidential and protected.")
+            })
+            {
+                <div class="col-md-4 ">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas @feature.Item1  brand fa-3x mb-3 "></i>
+                            <h5 class="card-title fw-bold">@feature.Item2</h5>
+                            
+                            <p class="card-text">@feature.Item3</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class=" shadow-lsm py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Why Choose Us?</h2>
+        <div class="row g-4">
+            @foreach (var reason in new[] {
+            ("fa-user-check", "Personalized Experience", "Our platform adapts to your needs and provides insights that help you optimize your spending."),
+            ("fa-sync-alt", "Seamless Syncing", "Stay updated across multiple devices and platforms, ensuring you're always in control of your finances."),
+            ("fa-trophy", "Achieve Financial Goals", "Track your progress and see how your budget is helping you save and achieve your financial objectives.")
+            })
+            {
+                <div class="col-md-4 ">
+                    <div class="text-center  p-4 rounded-3 shadow-lg ">
+                        <i class="fas @reason.Item1 fa-3x mb-3 brand"></i>
+                        <h4 class="h5 fw-bold">@reason.Item2</h4>
+                        <p>@reason.Item3</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">What Our Users Say</h2>
+        <div class="row g-4">
+            @foreach (var testimonial in new[] {
+            ("This app has changed the way I manage my expenses. It's easy to use and incredibly helpful!", "Sarah L."),
+            ("Thanks to BudgetMaster, I now feel confident about saving and planning for the future.", "John M."),
+            ("I love how secure and private the platform is. My data feels safe and I can track everything in one place.", "Emily W.")
+            })
+            {
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text mb-4"><i class="fas fa-quote-left brand me-2"></i>@testimonial.Item1</p>
+                            <footer class="blockquote-footer">@testimonial.Item2</footer>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

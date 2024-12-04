@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Personal Budget Planner </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SpendSmart.styles.css" asp-append-version="true" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header-color">
+        <nav class="d-flex justify-content-between navbar navbar-expand-sm navbar-dark shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/logo.webp" alt="Budget Planner Logo" class="img-fluid" style="height: 50px;">
+                    <span class="ms-2  fw-bold tagline">BudgetMaster</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Expenses">Expenses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="BudgetOverview">Budget Overview</a>
+                        </li>
+                        <partial name="_LoginPartial" />
+                    </ul>
+                  
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top bg-light text-muted py-4 mb-0 pb-0 h-34">
+        <div class="container">
+            <div class="row">
+                <!-- Left Section: Branding -->
+                <div class="col-md-6">
+                    <p class="mb-0">
+                        &copy; 2024 BudgetMaster. All rights reserved.
+                        <br>
+                        Designed and developed by <strong>Innocent Niyonzima</strong>, <strong>Patrick</strong>, and <strong>Olivier</strong>.
+                    </p>
+                </div>
+
+                <!-- Right Section: Quick Links -->
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a asp-area="" asp-controller="Home" asp-action="About" class="text-muted">About Us</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-muted">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a asp-area="" asp-controller="Home" asp-action="Terms" class="text-muted">Terms of Service</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a asp-area="" asp-controller="Home" asp-action="FAQ" class="text-muted">FAQs</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a asp-area="" asp-controller="Home" asp-action="Contact" class="text-muted">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

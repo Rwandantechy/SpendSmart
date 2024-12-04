@@ -1,0 +1,225 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+/* Color Palette */
+:root {
+    --primary-color: #123962;
+    --secondary-color: #00aee6;
+    --background-color: #717E83;
+    --text-color: white;
+    --highlight-color: #f7931a; 
+    --light-gray: #f8f9fa; 
+    --border-color: #b1d4e5; 
+}
+
+/* Root Styles */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+/* Increase font size for larger screens */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Body Styles */
+body {
+    margin-bottom: 60px;
+    font-family: "Comic Neue", cursive;
+    font-weight: 600;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+.brand{
+    color:var(--highlight-color)
+}
+
+/* Hero Section Styles */
+.hero {
+    width:100% !important;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    color: white;
+}
+
+    .hero img {
+        max-width: 100%;
+    }
+
+/* Links */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+    a:hover {
+        color: darkorange;
+    }
+
+
+.navbar {
+    background-color: #494848;
+   
+    font-weight: 400;
+    line-height:1px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+    .navbar-brand:hover {
+        color: darkorange;
+    }
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+}
+
+    .navbar-nav .nav-link:hover::before {
+        transform: scaleX(1);
+    }
+
+/* Tagline Styles */
+.tagline {
+    font-size: 1.5rem; 
+    font-weight: 700;
+    color: var(--highlight-color);
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    margin-top: 1rem; 
+    margin-bottom: 1rem;
+}
+
+/* Responsive Tagline Styles */
+@media (max-width: 768px) {
+    .tagline {
+        font-size: 1.3rem; 
+    }
+}
+/* Button Styles */
+.btn {
+    transition: all 0.3s ease;
+}
+.text-accent{
+    color:var(--highlight-color);
+}
+.btn-primary {
+    background-color: var(--secondary-color);
+}
+
+    .btn-primary:hover {
+        background-color: #0098cc;
+    }
+
+.btn-secondary {
+    background-color: var(--primary-color);
+}
+
+    .btn-secondary:hover {
+        background-color: #0e2d4e;
+    }
+
+/* Features Section Styles */
+.features .card {
+    transition: transform 0.3s ease;
+}
+
+    .features .card:hover {
+        transform: translateY(-10px);
+    }
+
+.features .card-body i {
+    color: var(--secondary-color);
+}
+
+
+
+/* Testimonials Section Styles */
+.testimonials .card {
+    border-radius: .5rem;
+    transition: all .3s ease;
+}
+
+    .testimonials .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.2) !important;
+    }
+
+.testimonials .blockquote-footer {
+    color: var(--secondary-color);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #0098cc;
+    }
+
+/* Table Styles */
+.table thead th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--light-gray);
+}
+
+/* Form Styles */
+.form-control :focus {
+    border-color: var(--secondary-color);
+}
+
+/* Alert Styles */
+.alert-success {
+    background-color: var(--secondary-color);
+    border-color: #0098cc;
+    color: white;
+}
+
+.alert-danger {
+    background-color: var(--highlight-color);
+    border-color: #bd2130;
+    color: white;
+}
+.card{
+   background-color:var(--primary-color);
+}
+/* Custom Card Styles */
+.card-header {
+    background-color: var(--primary-color);
+    color: white
+}
+
+/* Financial Element Styles */
+.balance-positive {
+    color: var(--secondary-color);
+}
+
+.balance-negative {
+    color: var(--highlight-color);
+}

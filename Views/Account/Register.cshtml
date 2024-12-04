@@ -1,0 +1,62 @@
+﻿﻿@using SpendSmart.ViewModels;
+@model RegisterViewModel;
+
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<div class="signup-page container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">Create an Account</h2>
+
+                    <!-- Form -->
+                    <form asp-action="Register" method="post">
+                        @* Full Name *@
+                        <div class="form-group mb-3">
+                            <label asp-for="Name" class="form-label"></label>
+                            <input asp-for="Name" class="form-control" placeholder="Enter your full name">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        @* Email *@
+                        <div class="form-group mb-3">
+                            <label asp-for="Email" class="form-label"></label>
+                            <input asp-for="Email" class="form-control" placeholder="Enter your email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        @* Password *@
+                        <div class="form-group mb-3">
+                            <label asp-for="Password" class="form-label"></label>
+                            <input asp-for="Password" class="form-control"  placeholder="Enter your password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        @* Confirm Password *@
+                        <div class="form-group mb-3">
+                            <label class="form-label"></label>
+                            <input class="form-control" asp-for="ConfirmPassword"  placeholder="Re-enter your password">
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        @* Submit Button *@
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Sign Up</button>
+                        </div>
+                    </form>
+
+                    <!-- Redirect to Login -->
+                    <div class="text-center mt-3">
+                        <p>
+                            Already have an account?
+                            <a asp-action="Login" asp-controller="Account" class="text-primary">Login here</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

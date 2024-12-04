@@ -1,0 +1,69 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Users> SignInManager
+
+<ul class="navbar-nav sm-auto">
+    <!-- Right Section: Login or User Profile -->
+    <li class="nav-item d-flex align-items-center">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <div class="user-profile-circle">
+                @* Extract the initials from the user name *@
+                @{
+                    var userName = User.Identity.Name.Split(' ');
+                    var initials = userName.Length >= 2 ? userName[0].Substring(0, 1) + userName[1].Substring(0, 1) : userName[0].Substring(0, 1);
+                }
+                <span class="user-initials">
+                    @initials
+                </span>
+            </div>
+            <a class="nav-link active" asp-controller="Account" asp-action="Logout">Logout</a>
+        }
+        else
+        {
+            <a class="nav-link active" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+        }
+    </li>
+</ul>
+
+
+
+
+
+<!--
+<div class="login-page container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">Login to Your Account</h2>
+
+                    <form asp-action="Login" asp-controller="Home" method="post">
+                        <div class="form-group mb-3">
+                            <label asp-for="Email" class="form-label"></label>
+                            <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Password" class="form-label"></label>
+                            <input asp-for="Password" class="form-control" type="password" placeholder="Enter your password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Login</button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <p>
+                            Don't have an account?
+                            <a asp-controller="Home" asp-action="SignUp" class="brand">Sign Up here</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
